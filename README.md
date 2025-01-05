@@ -19,7 +19,4 @@ EstateNest is a ReactNative and [Expo](https://expo.dev) based Property Rental a
 
 ## Application Screenshots
 
-![Home Screen](https://i.imgur.com/FMASgYh.png){:style="max-width: 300px; margin-right: 10px;"}
-![Explore Screen](https://i.imgur.com/7eKqvS9.png){:style="max-width: 300px; margin-right: 10px;"}
-![Profile Screen](https://i.imgur.com/EDuyuAX.png){:style="max-width: 300px; margin-right: 10px;"}
-![Screen after Logout](https://i.imgur.com/PrGwgD6.png){:style="max-width: 300px; margin-right: 10px;"}
+![Home Screen](https://i.imgur.com/FMASgYh.png)
