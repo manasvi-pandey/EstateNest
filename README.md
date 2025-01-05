@@ -1,50 +1,25 @@
-# Welcome to your Expo app 👋
+# Welcome to EstateNest
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+EstateNest is a ReactNative and [Expo](https://expo.dev) based Property Rental application.
 
-## Get started
+## Key Features
 
-1. Install dependencies
+-   Google Authentication with [AppWrite](https://appwrite.io/docs)
+-   AppWrite Database
+-   Home page with Property listing
+-   Filter functionalities
+-   An Explore page for Exploring all Properties
+-   Prototype of a Profile Page
 
-   ```bash
-   npm install
-   ```
+## Upcoming Features
 
-2. Start the app
+-   Real-time Notifications
+-   Profile Management
+-   Signing up as Property Dealer to list your own Properties
 
-   ```bash
-    npx expo start
-   ```
+## Application Screenshots
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+![Home Screen](https://i.imgur.com/FMASgYh.png)
+![Explore Screen](https://i.imgur.com/7eKqvS9.png)
+![Profile Screen](https://i.imgur.com/EDuyuAX.png)
+![Screen after Logout](https://i.imgur.com/PrGwgD6.png)

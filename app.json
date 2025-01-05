@@ -1,7 +1,7 @@
 {
     "expo": {
-        "name": "RealEstate",
-        "slug": "RealEstate",
+        "name": "EstateNest",
+        "slug": "EstateNest",
         "version": "1.0.0",
         "orientation": "portrait",
         "icon": "./assets/images/icon.png",
