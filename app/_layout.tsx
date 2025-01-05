@@ -1,39 +1,51 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { StatusBar } from 'expo-status-bar';
-import { useEffect } from 'react';
-import 'react-native-reanimated';
+import { SplashScreen, Stack } from "expo-router";
+import "./global.css";
 
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { useFonts } from "expo-font";
+import { useEffect } from "react";
+import GlobalProvider from "@/providers/global-provider";
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
+import * as Network from "expo-network";
+import { Alert } from "react-native";
+
+import { StatusBar } from "expo-status-bar";
+
+const checkInternetConnection = async () => {
+    const networkState = await Network.getNetworkStateAsync();
+
+    if (!networkState.isConnected) {
+        Alert.alert(
+            "No internet",
+            "Seems like you are not connected to the Internet. Please check your connection and try again."
+        );
+    }
+};
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
+    const [fontsLoaded] = useFonts({
+        "Roboto-Regular": require("../assets/fonts/Roboto-Regular.ttf"),
+        "Roboto-Bold": require("../assets/fonts/Roboto-Bold.ttf"),
+        "Roboto-Light": require("../assets/fonts/Roboto-Light.ttf"),
+        "Roboto-Black": require("../assets/fonts/Roboto-Black.ttf"),
+        "Roboto-Medium": require("../assets/fonts/Roboto-Medium.ttf"),
+    });
 
-  useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
+    useEffect(() => {
+        checkInternetConnection();
+    }, []);
 
-  if (!loaded) {
-    return null;
-  }
+    useEffect(() => {
+        if (fontsLoaded) {
+            SplashScreen.hideAsync();
+        }
+    }, [fontsLoaded]);
 
-  return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
-  );
+    if (!fontsLoaded) return null;
+
+    return (
+        <GlobalProvider>
+            <StatusBar style="dark" />
+            <Stack screenOptions={{ headerShown: false }} />
+        </GlobalProvider>
+    );
 }
